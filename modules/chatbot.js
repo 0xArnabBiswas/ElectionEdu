@@ -19,7 +19,7 @@ const responseCache = new Map();
 /** @type {boolean} */
 let isProcessing = false;
 
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent';
 
 const SYSTEM_PROMPT = `You are "Election AI", a friendly, knowledgeable, and impartial election education assistant for Indian elections.
 
@@ -192,14 +192,7 @@ async function handleUserMessage(rawText) {
     console.error('Chatbot error:', err);
     removeTypingIndicator();
     
-    // Check if it's a rate limit error (429)
-    const isRateLimit = err.message.includes('429');
-    const errorMsg = isRateLimit 
-      ? 'The AI service is currently very busy. Let me try with my built-in knowledge...'
-      : 'Sorry, I encountered an error. Let me try with my built-in knowledge...';
-      
-    addBotMessage(errorMsg);
-
+    // Silent fallback to built-in knowledge
     const fallback = getFallbackResponse(text);
     addBotMessage(fallback);
   }
