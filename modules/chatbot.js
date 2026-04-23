@@ -19,7 +19,7 @@ const responseCache = new Map();
 /** @type {boolean} */
 let isProcessing = false;
 
-const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent';
+const GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent';
 
 const SYSTEM_PROMPT = `You are "Election AI", a friendly, knowledgeable, and impartial election education assistant for Indian elections.
 
@@ -91,6 +91,10 @@ const FALLBACK_KB = [
   {
     keywords: ['model code', 'mcc', 'conduct', 'rules'],
     response: '🗳️ The Model Code of Conduct (MCC):\n\n• A set of guidelines for parties/candidates during elections\n• Comes into effect the moment elections are announced\n• Prohibits government from announcing new policies or schemes\n• Restricts use of government resources for campaigning\n• ECI can take action against violators\n• Remains in force until results are declared',
+  },
+  {
+    keywords: ['hello', 'hi', 'hey', 'greetings', 'namaste'],
+    response: '👋 Hello! I\'m your Election AI assistant. How can I help you understand India\'s election process today?\n\nYou can ask me about voter registration, EVMs, the election timeline, or how government is formed!',
   },
 ];
 
@@ -187,7 +191,14 @@ async function handleUserMessage(rawText) {
   } catch (err) {
     console.error('Chatbot error:', err);
     removeTypingIndicator();
-    addBotMessage('Sorry, I encountered an error. Let me try with my built-in knowledge...');
+    
+    // Check if it's a rate limit error (429)
+    const isRateLimit = err.message.includes('429');
+    const errorMsg = isRateLimit 
+      ? 'The AI service is currently very busy. Let me try with my built-in knowledge...'
+      : 'Sorry, I encountered an error. Let me try with my built-in knowledge...';
+      
+    addBotMessage(errorMsg);
 
     const fallback = getFallbackResponse(text);
     addBotMessage(fallback);
@@ -265,7 +276,11 @@ export function getFallbackResponse(userMessage) {
 
   if (bestMatch) return bestMatch.response;
 
-  return '🗳️ That\'s an interesting question! I have built-in knowledge about voter registration, EVMs, VVPAT, NOTA, election timeline, candidate nominations, and the Model Code of Conduct. Try asking about one of these topics!\n\n💡 For the best experience, add your Gemini API key to unlock AI-powered responses.';
+  const defaultMsg = apiKey
+    ? "🗳️ That's an interesting question! I have built-in knowledge about voter registration, EVMs, VVPAT, NOTA, and the election timeline. Try asking about those! 💡"
+    : "🗳️ That's an interesting question! I have built-in knowledge about voter registration, EVMs, VVPAT, NOTA, and the election timeline. 💡 For the best experience, add your Gemini API key to unlock AI-powered responses.";
+
+  return defaultMsg;
 }
 
 function addBotMessage(text) {
