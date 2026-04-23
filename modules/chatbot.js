@@ -93,8 +93,8 @@ const FALLBACK_KB = [
     response: '🗳️ The Model Code of Conduct (MCC):\n\n• A set of guidelines for parties/candidates during elections\n• Comes into effect the moment elections are announced\n• Prohibits government from announcing new policies or schemes\n• Restricts use of government resources for campaigning\n• ECI can take action against violators\n• Remains in force until results are declared',
   },
   {
-    keywords: ['hello', 'hi', 'hey', 'greetings', 'namaste'],
-    response: '👋 Hello! I\'m your Election AI assistant. How can I help you understand India\'s election process today?\n\nYou can ask me about voter registration, EVMs, the election timeline, or how government is formed!',
+    keywords: ['hello', 'hi', 'hey', 'greetings', 'namaste', 'ji', 'yo'],
+    response: '👋 Hello! I\'m your Election AI assistant. How can I help you understand India\'s election process today?',
   },
 ];
 
@@ -268,6 +268,11 @@ export function getFallbackResponse(userMessage) {
   }
 
   if (bestMatch) return bestMatch.response;
+
+  // If the message is very short and no match found
+  if (lower.length < 3) {
+    return "👋 I'm sorry, I didn't quite catch that. Could you please ask a question about elections or choose a topic below?";
+  }
 
   const defaultMsg = apiKey
     ? "🗳️ That's an interesting question! I have built-in knowledge about voter registration, EVMs, VVPAT, NOTA, and the election timeline. Try asking about those! 💡"
