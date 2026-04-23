@@ -20,10 +20,9 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          chatbot: ['./modules/chatbot.js'],
-          ui: ['./modules/timeline.js', './modules/quiz.js', './modules/eligibility.js', './modules/stats.js'],
-          particles: ['./modules/particles.js'],
+        manualChunks(id) {
+          if (id.includes('chatbot.js')) return 'chatbot';
+          if (id.includes('modules/')) return 'ui_modules';
         },
       },
     },
