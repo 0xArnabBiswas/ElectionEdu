@@ -5,7 +5,7 @@
  */
 
 /** @type {Array<{phase:number, icon:string, title:string, summary:string, details:{heading:string, points:string[]}}>} */
-const TIMELINE_DATA = [
+export const TIMELINE_DATA = [
   {
     phase: 1,
     icon: '📋',

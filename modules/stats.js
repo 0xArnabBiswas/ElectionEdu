@@ -5,7 +5,7 @@
  */
 
 /** @type {Array<{icon:string, value:number, suffix:string, label:string}>} */
-const STATS_DATA = [
+export const STATS_DATA = [
   { icon: '🗳️', value: 970, suffix: 'M+', label: 'Registered Voters' },
   { icon: '🏛️', value: 543, suffix: '', label: 'Lok Sabha Constituencies' },
   { icon: '📍', value: 1, suffix: 'M+', label: 'Polling Stations' },

@@ -202,7 +202,7 @@ async function handleUserMessage(rawText) {
  * @param {string} userMessage
  * @returns {Promise<string>}
  */
-async function getGeminiResponse(userMessage) {
+export async function getGeminiResponse(userMessage) {
   conversationHistory.push({
     role: 'user',
     parts: [{ text: userMessage }],
@@ -250,7 +250,7 @@ async function getGeminiResponse(userMessage) {
  * @param {string} userMessage
  * @returns {string}
  */
-function getFallbackResponse(userMessage) {
+export function getFallbackResponse(userMessage) {
   const lower = userMessage.toLowerCase();
   let bestMatch = null;
   let bestScore = 0;
