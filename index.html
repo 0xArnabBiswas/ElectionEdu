@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ElectionEdu — Interactive Indian Election Process Guide</title>
+  <meta name="description" content="Learn about India's election process with an AI-powered assistant. Interactive timeline, quizzes, voter eligibility checker, and more." />
+  <meta name="theme-color" content="#0a0e27" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+  <!-- Skip Navigation — Accessibility -->
+  <a href="#main-content" class="skip-nav" id="skip-nav">Skip to main content</a>
+
+  <!-- Particle Canvas Background -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-container">
+      <a href="#hero" class="nav-logo" id="nav-logo" aria-label="ElectionEdu Home">
+        <span class="logo-icon" aria-hidden="true">🗳️</span>
+        <span class="logo-text">Election<span class="logo-accent">Edu</span></span>
+      </a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span class="hamburger" aria-hidden="true"></span>
+      </button>
+      <ul class="nav-links" id="nav-links" role="menubar">
+        <li role="none"><a href="#hero" role="menuitem" class="nav-link" id="nav-link-home">Home</a></li>
+        <li role="none"><a href="#timeline" role="menuitem" class="nav-link" id="nav-link-timeline">Timeline</a></li>
+        <li role="none"><a href="#quiz" role="menuitem" class="nav-link" id="nav-link-quiz">Quiz</a></li>
+        <li role="none"><a href="#eligibility" role="menuitem" class="nav-link" id="nav-link-eligibility">Eligibility</a></li>
+        <li role="none"><a href="#stats" role="menuitem" class="nav-link" id="nav-link-stats">Facts</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Main Content -->
+  <main id="main-content">
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-content">
+        <div class="hero-badge" aria-hidden="true">🇮🇳 India's Democracy</div>
+        <h1 id="hero-heading" class="hero-title">
+          Understand India's <span class="gradient-text">Election Process</span>
+        </h1>
+        <p class="hero-subtitle">
+          Your AI-powered guide to the world's largest democracy. Explore the complete election journey — from voter registration to government formation — with interactive timelines, quizzes, and an intelligent assistant.
+        </p>
+        <div class="hero-actions">
+          <a href="#timeline" class="btn btn-primary" id="hero-cta-explore">
+            <span aria-hidden="true">🗺️</span> Explore Timeline
+          </a>
+          <button class="btn btn-secondary" id="hero-cta-chat" aria-label="Open AI Election Assistant">
+            <span aria-hidden="true">🤖</span> Ask AI Assistant
+          </button>
+        </div>
+        <div class="hero-stats" aria-label="Key election statistics">
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-target="970">0</span><span class="hero-stat-suffix">M+</span>
+            <span class="hero-stat-label">Registered Voters</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-target="543">0</span>
+            <span class="hero-stat-label">Lok Sabha Seats</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" data-target="1">0</span><span class="hero-stat-suffix">M+</span>
+            <span class="hero-stat-label">Polling Stations</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section class="section" id="timeline" aria-labelledby="timeline-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" aria-hidden="true">🗺️ Step-by-Step</span>
+          <h2 id="timeline-heading" class="section-title">The Election <span class="gradient-text">Journey</span></h2>
+          <p class="section-subtitle">From voter registration to government formation — explore each phase of India's democratic process.</p>
+        </div>
+        <div class="timeline" id="timeline-container" role="list" aria-label="Election process timeline">
+          <!-- Timeline items injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Section -->
+    <section class="section section-alt" id="quiz" aria-labelledby="quiz-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" aria-hidden="true">📊 Test Yourself</span>
+          <h2 id="quiz-heading" class="section-title">Election <span class="gradient-text">Knowledge Quiz</span></h2>
+          <p class="section-subtitle">Think you know India's election process? Take this 10-question quiz and find out!</p>
+        </div>
+        <div class="quiz-container" id="quiz-container">
+          <!-- Quiz UI injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="section" id="eligibility" aria-labelledby="eligibility-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" aria-hidden="true">🗳️ Check Now</span>
+          <h2 id="eligibility-heading" class="section-title">Voter <span class="gradient-text">Eligibility Checker</span></h2>
+          <p class="section-subtitle">Find out if you're eligible to vote and learn how to register.</p>
+        </div>
+        <div class="eligibility-container" id="eligibility-container">
+          <!-- Eligibility form injected by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section section-alt" id="stats" aria-labelledby="stats-heading">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-badge" aria-hidden="true">📈 By the Numbers</span>
+          <h2 id="stats-heading" class="section-title">India's Democracy <span class="gradient-text">in Numbers</span></h2>
+          <p class="section-subtitle">The scale of the world's largest democratic exercise is truly staggering.</p>
+        </div>
+        <div class="stats-grid" id="stats-grid" aria-label="Election statistics dashboard">
+          <!-- Stats cards injected by JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <span class="logo-icon" aria-hidden="true">🗳️</span>
+          <span class="logo-text">Election<span class="logo-accent">Edu</span></span>
+        </div>
+        <p class="footer-text">An AI-powered election education platform. Built with ❤️ using Google Gemini.</p>
+        <p class="footer-disclaimer">This is an educational tool. For official information, visit <a href="https://eci.gov.in" target="_blank" rel="noopener noreferrer" id="footer-eci-link">eci.gov.in</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Chatbot Widget -->
+  <div class="chatbot-widget" id="chatbot-widget" role="dialog" aria-label="AI Election Assistant" aria-hidden="true">
+    <div class="chatbot-header" id="chatbot-header">
+      <div class="chatbot-header-info">
+        <div class="chatbot-avatar" aria-hidden="true">🤖</div>
+        <div>
+          <h3 class="chatbot-name">Election AI</h3>
+          <span class="chatbot-status" id="chatbot-status">Powered by Google Gemini</span>
+        </div>
+      </div>
+      <button class="chatbot-close" id="chatbot-close" aria-label="Close chat">✕</button>
+    </div>
+    <div class="chatbot-messages" id="chatbot-messages" role="log" aria-live="polite" aria-label="Chat messages">
+      <!-- Chat messages injected by JS -->
+    </div>
+    <div class="chatbot-suggestions" id="chatbot-suggestions" aria-label="Suggested questions">
+      <!-- Suggestion chips injected by JS -->
+    </div>
+    <form class="chatbot-input-area" id="chatbot-form" aria-label="Send a message">
+      <input
+        type="text"
+        class="chatbot-input"
+        id="chatbot-input"
+        placeholder="Ask about elections..."
+        autocomplete="off"
+        aria-label="Type your election question"
+      />
+      <button type="submit" class="chatbot-send" id="chatbot-send" aria-label="Send message">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+        </svg>
+      </button>
+    </form>
+  </div>
+
+  <!-- Chatbot FAB (Floating Action Button) -->
+  <button class="chatbot-fab" id="chatbot-fab" aria-label="Open AI Election Assistant" aria-expanded="false">
+    <span class="chatbot-fab-icon" aria-hidden="true">🤖</span>
+    <span class="chatbot-fab-pulse" aria-hidden="true"></span>
+  </button>
+
+  <!-- Google Translate Widget -->
+  <div id="google_translate_element" class="translate-widget"></div>
+  <script>
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'en',
+        includedLanguages: 'en,hi,bn,ta,te,ml,kn,mr,gu,pa,ur',
+        layout: google.translate.TranslateElement.InlineLayout.HORIZONTAL,
+        autoDisplay: false
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- Confetti Canvas (for quiz completion) -->
+  <canvas id="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Screen reader live region for dynamic announcements -->
+  <div id="sr-announcer" class="sr-only" aria-live="assertive" aria-atomic="true" role="status"></div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

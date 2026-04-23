@@ -1,0 +1,39 @@
+{
+  "name": "electionedu",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive AI-powered election process assistant — learn about India's democracy",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/0xArnabBiswas/ElectionEdu.git"
+  },
+  "keywords": [
+    "election",
+    "india",
+    "democracy",
+    "education",
+    "gemini",
+    "ai"
+  ],
+  "author": "Arnab Biswas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/0xArnabBiswas/ElectionEdu/issues"
+  },
+  "homepage": "https://github.com/0xArnabBiswas/ElectionEdu#readme",
+  "dependencies": {
+    "@google/genai": "^1.50.1",
+    "vite": "^8.0.10"
+  },
+  "devDependencies": {
+    "vitest": "^4.1.5"
+  }
+}
