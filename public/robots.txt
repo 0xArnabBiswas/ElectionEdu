@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://electionedu-193975227296.asia-south1.run.app/sitemap.xml

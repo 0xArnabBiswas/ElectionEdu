@@ -1,0 +1,21 @@
+{
+  "name": "ElectionEdu",
+  "short_name": "ElectionEdu",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0e27",
+  "theme_color": "#7c3aed",
+  "description": "Interactive guide to India's election process.",
+  "icons": [
+    {
+      "src": "https://raw.githubusercontent.com/google/material-design-icons/master/png/action/how_to_vote/materialicons/24dp/1x/baseline_how_to_vote_black_24dp.png",
+      "sizes": "24x24",
+      "type": "image/png"
+    },
+    {
+      "src": "https://raw.githubusercontent.com/google/material-design-icons/master/png/action/how_to_vote/materialicons/48dp/2x/baseline_how_to_vote_black_48dp.png",
+      "sizes": "96x96",
+      "type": "image/png"
+    }
+  ]
+}

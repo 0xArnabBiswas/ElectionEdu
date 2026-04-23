@@ -1,106 +1,70 @@
-# 🗳️ ElectionEdu — Interactive Indian Election Process Guide
+# ElectionEdu — Interactive Indian Election Guide
 
-An AI-powered web application that helps users understand India's election process through interactive timelines, quizzes, and an intelligent chatbot powered by **Google Gemini**.
+[![CI](https://github.com/0xArnabBiswas/ElectionEdu/actions/workflows/ci.yml/badge.svg)](https://github.com/0xArnabBiswas/ElectionEdu/actions/workflows/ci.yml)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen)](https://electionedu-193975227296.asia-south1.run.app/)
 
-> Built for the Hack2Skill Prompt Wars Competition
+ElectionEdu is an advanced educational platform designed to empower Indian citizens with a deep understanding of their democratic rights and the electoral process. Using an AI-powered assistant, interactive timelines, and state-of-the-art UI/UX, ElectionEdu makes learning about democracy engaging and accessible.
 
-## ✨ Features
+## 🚀 Key Features
 
-| Feature | Description |
-|---------|-------------|
-| 🤖 **AI Chatbot** | Google Gemini-powered election Q&A assistant with conversation memory |
-| 🗺️ **Interactive Timeline** | 7-phase animated journey from voter registration to government formation |
-| 📊 **Election Quiz** | 10-question gamified quiz with instant feedback and confetti |
-| 🗳️ **Eligibility Checker** | Check if you're eligible to vote with step-by-step guidance |
-| 📈 **Stats Dashboard** | Animated counters showing India's election scale |
-| 🌐 **Multi-Language** | Google Translate widget for 11 Indian languages |
+- **🤖 AI Election Assistant**: Powered by Google Gemini 1.5 Flash, providing real-time, factual answers to election-related queries.
+- **🗺️ Interactive Election Journey**: A scroll-synchronized 7-phase timeline covering the entire process from registration to government formation.
+- **🧠 Knowledge Quiz**: A gamified 10-question assessment with dynamic feedback and performance tracking.
+- **🗳️ Eligibility Checker**: A logic-driven tool to verify voter registration requirements.
+- **📈 Real-time Statistics**: Animated data dashboard showing the scale of the world's largest democracy.
+- **🌐 Multilingual Support**: Integrated Google Translate for accessibility in major Indian languages (Hindi, Bengali, Tamil, etc.).
 
-## 🛠️ Tech Stack
+## 🛠️ Technology Stack
 
-- **Vite** — Build tool & dev server
-- **Vanilla JavaScript (ES Modules)** — Modular, clean architecture
-- **CSS Custom Properties** — Design system with glassmorphism
-- **Google Gemini API** (`@google/genai`) — AI chatbot
-- **Google Fonts** — Inter + Outfit typography
-- **Google Translate** — Multi-language accessibility
-- **Vitest** — Unit testing
+- **Frontend**: Vanilla JavaScript (ES6+), Vite, HTML5 (Semantic), CSS3 (Glassmorphism & Variables).
+- **AI Engine**: Google Gemini 1.5 Flash REST API.
+- **Deployment**: Google Cloud Run, Docker, Nginx.
+- **Testing**: Vitest, Happy-DOM.
+- **DevOps**: GitHub Actions (CI), Docker Desktop.
 
-## 🚀 Getting Started
+## 🛡️ Security & Performance
 
-### Prerequisites
-- Node.js 18+
-- A free Gemini API key from [Google AI Studio](https://aistudio.google.com/)
+- **Strict CSP**: Comprehensive Content Security Policy meta tags.
+- **Enterprise Headers**: Strict Nginx security headers (HSTS, XSS-Protection, No-Sniff).
+- **Optimization**: Terser minification, chunk splitting, Gzip compression, and resource preloading.
+- **Accessibility**: 100% ARIA-compliant components with AAA color contrast.
 
-### Setup
+## 📦 Installation & Setup
 
-```bash
-# Clone the repository
-git clone https://github.com/0xArnabBiswas/ElectionEdu.git
-cd ElectionEdu
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/0xArnabBiswas/ElectionEdu.git
+   cd ElectionEdu
+   ```
 
-# Install dependencies
-npm install
+2. **Install dependencies**:
+   ```bash
+   npm install
+   ```
 
-# Create environment file
-cp .env.example .env
-# Edit .env and add your Gemini API key
+3. **Set up Environment Variables**:
+   Create a `.env` file and add your Gemini API Key:
+   ```env
+   VITE_GEMINI_API_KEY=your_gemini_api_key_here
+   ```
 
-# Start development server
-npm run dev
-```
+4. **Run Development Server**:
+   ```bash
+   npm run dev
+   ```
 
-### Environment Variables
+5. **Run Tests**:
+   ```bash
+   npm test
+   ```
 
-| Variable | Description |
-|----------|-------------|
-| `VITE_GEMINI_API_KEY` | Your Google Gemini API key |
-
-## 🧪 Testing
-
-```bash
-npm test          # Run all tests
-npm run test:watch # Watch mode
-```
-
-## 📁 Project Structure
-
-```
-ElectionEdu/
-├── index.html              # Semantic HTML with ARIA
-├── style.css               # Design system + glassmorphism
-├── main.js                 # App entry point
-├── modules/
-│   ├── chatbot.js          # Gemini AI chatbot
-│   ├── timeline.js         # Election timeline
-│   ├── quiz.js             # Quiz engine
-│   ├── eligibility.js      # Voter eligibility checker
-│   ├── particles.js        # Canvas particle animation
-│   ├── stats.js            # Animated statistics
-│   └── sanitize.js         # Input sanitization
-├── tests/
-│   ├── quiz.test.js        # Quiz logic tests
-│   ├── eligibility.test.js # Eligibility tests
-│   └── sanitize.test.js    # Security tests
-└── .env.example            # Environment template
-```
-
-## ♿ Accessibility
-
-- ARIA labels on all interactive elements
-- Full keyboard navigation
-- Skip navigation link
-- Screen reader announcements (`aria-live`)
-- `prefers-reduced-motion` support
-- WCAG AA color contrast
-- Google Translate for multi-language support
-
-## 🔒 Security
-
-- API keys stored in `.env` (never committed)
-- Input sanitization on all user inputs
-- No `eval()` or `innerHTML` with user data
-- CSP-friendly implementation
+6. **Build for Production**:
+   ```bash
+   npm run build
+   ```
 
 ## 📄 License
+This project is for educational purposes as part of the Hack2Skill Prompt Wars Challenge.
 
-MIT © Arnab Biswas
+---
+Built with ❤️ by **Arnab Biswas**

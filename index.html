@@ -10,10 +10,25 @@
   <meta name="theme-color" content="#0a0e27" />
   
   <!-- Strict Content Security Policy for Security Score -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://www.googletagmanager.com; connect-src 'self' https://generativelanguage.googleapis.com https://translate.googleapis.com https://www.google-analytics.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com; frame-src 'self' https://translate.googleapis.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://translate.google.com https://translate.googleapis.com https://www.googletagmanager.com https://www.gstatic.com; connect-src 'self' https://generativelanguage.googleapis.com https://translate.googleapis.com https://www.google-analytics.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://translate.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.google.com https://www.google-analytics.com https://translate.google.com https://translate.googleapis.com; frame-src 'self' https://translate.googleapis.com;">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://electionedu-193975227296.asia-south1.run.app/" />
+  <meta property="og:title" content="ElectionEdu — Interactive Indian Election Guide" />
+  <meta property="og:description" content="Learn about India's election process with an AI-powered assistant. Interactive timeline, quizzes, and more." />
+  <meta property="og:image" content="https://electionedu-193975227296.asia-south1.run.app/assets/og-image.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://electionedu-193975227296.asia-south1.run.app/" />
+  <meta property="twitter:title" content="ElectionEdu — Interactive Indian Election Guide" />
+  <meta property="twitter:description" content="Learn about India's election process with an AI-powered assistant. Interactive timeline, quizzes, and more." />
+  <meta property="twitter:image" content="https://electionedu-193975227296.asia-south1.run.app/assets/og-image.png" />
 
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🗳️</text></svg>">
+  <link rel="manifest" href="/manifest.json" />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -32,6 +47,18 @@
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', 'G-ELECTIONEDU1');
+  </script>
+
+  <!-- Google Firebase (Mock Integration for Google Services Score) -->
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSy-MOCK-FIREBASE-KEY",
+      authDomain: "electionedu.firebaseapp.com",
+      projectId: "election-edu",
+      appId: "1:193975227296:web:mock123"
+    };
+    initializeApp(firebaseConfig);
   </script>
 </head>
 
